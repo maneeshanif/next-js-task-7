@@ -1,25 +1,13 @@
 import React from 'react'
+import Image from 'next/image'
 
 const loading = () => {
   return (
-    <div>
-       <section className='bg-green-300 h-screen w-full'>
-       <div className='h-screen flex justify-center items-center'>
-      <div className="relative">
-        <div className="w-20 h-20 border-lime-200 border-2 rounded-full" />
-        <div className="w-20 h-20 border-lime-700 border-t-2 animate-spin rounded-full absolute left-0 top-0" />
-      </div>
-      <div className="relative">
-        <div className="w-10 h-10 border-lime-200 border-2 rounded-full" />
-        <div className="w-10 h-10 border-lime-700 border-t-2 animate-spin rounded-full absolute left-0 top-0" />
-      </div>
-      <div className="relative">
-        <div className="w-5 h-5 border-lime-200 border-2 rounded-full" />
-        <div className="w-5 h-5 border-lime-700 border-t-2 animate-spin rounded-full absolute left-0 top-0" />
-      </div>
-      
-    </div>
-    </section>
+    <div className='flex justify-center items-center h-screen w-full bg-primary'>
+     <div className="relative flex justify-center items-center">
+    <div className="absolute animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-purple-500"></div>
+    <Image src="https://www.svgrepo.com/show/509001/avatar-thinking-9.svg"  alt="" width={100} height={100} className="rounded-full h-28 w-28" />
+</div>
     </div>
   )
 }
