@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame  } from "@react-three/fiber";
 import * as THREE from "three";
 
 const Cylinder = ({ gap }: { gap: number }) => {
@@ -53,7 +53,7 @@ const Cylinder = ({ gap }: { gap: number }) => {
         textures.forEach((texture, index) => {
           const xPosition = index * (singleWidth + gap); 
           context.drawImage(
-            texture.image,
+            (texture as THREE.Texture).image,
             xPosition,
             0,
             singleWidth,
@@ -78,12 +78,14 @@ const Cylinder = ({ gap }: { gap: number }) => {
   }, []);
 
   useFrame((state, delta) => {
-    cyl.current.rotation.y -= delta;
+    if (cyl.current) {
+      cyl.current.rotation.y -= delta;
+    }
   });
 
   return (
     <>
-      <group rotation={[0, 1.8, 0.5]}>
+      <group  rotation={[0, 1.8, 0.5]}>
         <mesh ref={cyl}>
           <cylinderGeometry args={[1, 1, 1, 60, 60, true]} />
           <meshStandardMaterial transparent side={THREE.DoubleSide} />
