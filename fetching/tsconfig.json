@@ -6,11 +6,15 @@
       "dom.iterable",
       "esnext"
     ],
+  
+   
+  
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "types": ["@react-three/fiber"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
@@ -23,11 +27,15 @@
         "name": "next"
       }
     ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+"baseUrl": ".",
+"paths": {
+  "@/*": [
+    "./src/*"
+  ],
+  "./react-three/fiber": [
+    "node_modules/@react-three/fiber"
+  ]
+}
   },
   "include": [
     "next-env.d.ts",

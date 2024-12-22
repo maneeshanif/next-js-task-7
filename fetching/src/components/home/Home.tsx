@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Scene from "../Canvas/Scene";
+// import Scene from "../Canvas/Scene";   //thats hurt man
 
 const Home = () => {
   return (
@@ -7,7 +7,7 @@ const Home = () => {
       <h1 className="text-myorange font-bold text-3xl uppercase stroke-myorange stroke-2 text-center md:text-4xl bg-secondary p-2 rounded-md">
         Server side fetching vs Client side fetching 😊
       </h1>
-      <Scene />
+      {/* <Scene /> i am not able to add canvas here after working on this almost 2 days 🥲 */}
 
       <div className="h-48 w-[360px] md:w-[500px] flex justify-evenly  border-myorange border-2 items-center flex-col bg-white rounded-md">
         <div className="flex justify-center items-center p-4 gap-4">

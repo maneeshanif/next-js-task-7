@@ -1,7 +1,9 @@
 "use client";
 import React, { useRef, useEffect } from "react";
+import { Canvas } from "@react-three/fiber";
 import { useFrame  } from "@react-three/fiber";
 import * as THREE from "three";
+// import Group from "./Group";
 
 const Cylinder = ({ gap }: { gap: number }) => {
   const cyl = useRef<THREE.Mesh>(null);
@@ -75,7 +77,7 @@ const Cylinder = ({ gap }: { gap: number }) => {
         }
       })
       .catch((error) => console.error("Error loading images:", error));
-  }, []);
+  }, [gap]);
 
   useFrame((state, delta) => {
     if (cyl.current) {
@@ -85,12 +87,13 @@ const Cylinder = ({ gap }: { gap: number }) => {
 
   return (
     <>
-      <group  rotation={[0, 1.8, 0.5]}>
-        <mesh ref={cyl}>
-          <cylinderGeometry args={[1, 1, 1, 60, 60, true]} />
-          <meshStandardMaterial transparent side={THREE.DoubleSide} />
-        </mesh>
-      </group>
+    {/* <Group ref={cyl}/> */}
+    <group  rotation={[0, 1.4, 0.4]}>
+            <mesh ref={cyl}>
+                <cylinderGeometry args={[1, 1, 1, 60, 60, true]} />
+                <meshStandardMaterial transparent side={THREE.DoubleSide} />
+            </mesh>
+        </group> 
     </>
   );
 };
